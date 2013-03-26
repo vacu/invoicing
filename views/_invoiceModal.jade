@@ -1,0 +1,55 @@
+div#invoicesModal.modal.hide.fade
+  div.modal-header
+    button.close(data-dismiss="modal", aria-hidden="true") &times;
+    h3#myModalLabel Add new invoice
+  div.modal-body
+    p
+      label Invoice No.
+      input#invoiceNo(type="text")
+    p
+      label Created on
+      input#timeSince(type="text")
+    p 
+      label Client name
+      input#clientName(type="text")
+      input#projectId(type="hidden")
+    p
+      label Address
+      input#clientAddress(type="text")
+    p
+      label Due date
+      input#timeUntill(type="text")
+    p
+      label Comment
+      textarea#comment
+    p
+      label Payed
+      select#payed
+        option(value="0", selected="selected") No
+        option(value="1") Yes
+    p
+      label Items
+      button#addItem.btn.btn-primary Add new item
+      table#itemsTbl.table.table-hover.table-bordered
+        thead
+          th No.
+          th Description
+          th Unit
+          th Unit cost
+          th Qty
+          th Tax
+          th Total
+          th Actions
+        tbody
+        tfoot
+          tr
+            td(colspan="8", style="text-align: right")
+              label Subtotal: 
+                a#invoiceSubTotal 0
+                |  EUR
+              label Total: 
+                a#invoiceTotal 0
+                |  EUR
+  div.modal-footer
+    button.btn(data-dismiss="modal", aria-hidden="true") Close
+    button#addNewInvoice.btn.btn-primary Save changes

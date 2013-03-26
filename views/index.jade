@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  script(src="/javascripts/source.js")
+  script(src="/javascripts/projects.js")
+  script(src="/javascripts/invoices.js")
+  script(src="/javascripts/items.js")
+
+  include _header
+  div#content
+    include _projectList
+    include _invoiceList
+  include _projectModal
+  include _projectEditModal
+  include _invoiceModal
+  include _invoiceEditModal

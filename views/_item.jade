@@ -1,0 +1,51 @@
+tr
+  td.itemNo
+    label #1
+    input(type="hidden", id="itemId", value=item.id)
+  td.itemDesc
+    input.editItem(type="text", id="itemDesc", value=item.name)
+  td.itemUnit
+    select#itemUnit.editItem
+      if item.unit == 0
+        option(value="0", selected="selected") No unit
+        option(value="1") Pieces
+        option(value="2") Boxes
+        option(value="3") Kg
+      if item.unit == 1
+        option(value="0") No unit
+        option(value="1", selected="selected") Pieces
+        option(value="2") Boxes
+        option(value="3") Kg
+      if item.unit == 2
+        option(value="0") No unit
+        option(value="1") Pieces
+        option(value="2", selected="selected") Boxes
+        option(value="3") Kg
+      if item.unit == 3
+        option(value="0") No unit
+        option(value="1") Pieces
+        option(value="2") Boxes
+        option(value="3", selected="selected") Kg
+  td.itemUnitCost
+    input.editItem.addItem(type="text", id="itemUnitCost", value=item.unitCost)
+  td.itemQty
+    input.editItem.addItem(type="text", id="itemQty", value=item.qty)
+  td.itemTax
+    select#itemTax.editItem.addItem
+      if item.tax == 0
+        option(value="0", selected="selected") No tax
+        option(value="1") 19%
+        option(value="2") 7%
+      if item.tax == 1
+        option(value="0") No tax
+        option(value="1", selected="selected") 19%
+        option(value="2") 7%
+      if item.tax == 2
+        option(value="0") No tax
+        option(value="1") 19%
+        option(value="2", selected="selected") 7%
+  td.itemTotal
+    input.editItem(type="hidden", id="itemTotal", value=item.total)
+    input.editItem(type="text", id="itemSubTotal", value=item.subTotal)
+  td.itemActions
+    button.deleteItem.close &times

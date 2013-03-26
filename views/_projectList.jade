@@ -1,0 +1,9 @@
+div#projects
+  div.title Projects
+  ul#projectsList.nav.nav-pills.nav-stacked
+    each project in projects
+      li
+        button.close.deleteProject(data-id=project.id) &times;
+        button.close.addNewInvoice(href="#invoicesModal", data-toggle="modal", data-id=project.id) +
+        button.close.editProject(href="#projectEditModal", data-toggle="modal", data-id=project.id) e
+        a.projectId(data-id=project.id)= project.name

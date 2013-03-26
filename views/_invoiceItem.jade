@@ -1,0 +1,27 @@
+- var rowClass = 'info'
+- var currDate = new Date()
+- var theDate = new Date(data.dueDate)
+- var theCurrDateTime = parseInt(currDate.getTime());
+- var theDateTime = parseInt(theDate.getTime());
+
+- var formatedDueDate = theDate.toDateString()
+- var formatedSinceDate = new Date(data.sinceDate).getMonth() + '/' + new Date(data.sinceDate).getFullYear()
+
+if (theDateTime < theCurrDateTime && data.payed != 1)
+  rowClass = 'error'
+if (data.payed == 1)
+  rowClass = 'success'
+
+tr(class=rowClass)
+  td
+    a(data-id=dataId) ##{data.invoiceNo}-#{formatedSinceDate} for #{data.client}
+  td
+    a#dueDate= formatedDueDate
+  td
+    a= data.comment
+  td
+    a= data.totalValue
+      |  EUR
+  td.actions
+    button.close.deleteInvoice(data-id=dataId, data-invoice=invoiceId) &times;
+    button.close.editInvoice(data-id=dataId, data-invoice=invoiceId, data-toggle="modal", href="#invoiceEditModal") e

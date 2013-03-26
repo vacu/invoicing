@@ -1,0 +1,61 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  padding: 5px 5px 5px 5px;
+  background-color: green;
+  font-size: 30px;
+  color: white;
+
+  border-bottom: 1px solid white;
+}
+
+#content {
+  width: 100%;
+}
+
+#projects {
+  width: 200px;
+  float: left;
+  border-right: 1px solid white;
+}
+
+.title {
+  margin-top: 1px;
+  background-color: #228b22;
+  color: #fff;
+  padding: 5px 5px 11px 5px;
+  text-align: center;
+}
+
+#invoices {
+  margin-left: 201px;
+}
+
+#invoicesList thead {
+  background-color: #228B22;
+  color: white;
+}
+
+#invoicesList th.actions {
+  width: 50px;
+}
+
+.modal-body input, .modal-body textarea {
+  width: 100%;
+}
+
+#invoiceEditModal, #invoicesModal {
+  top:0;
+  left: 0;
+  margin-top: 20px;
+  margin-left: 120px;
+  width: 1200px;
+}
+
+#invoiceEditModal .modal-body, #invoicesModal .modal-body {
+  max-width: 100%;
+  max-height: 600px;
+}

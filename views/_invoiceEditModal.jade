@@ -1,0 +1,56 @@
+div#invoiceEditModal.modal.hide.fade
+  div.modal-header
+    button.close(data-dismiss="modal", aria-hidden="true") &times;
+    h3#myModalLabel Edit invoice
+  div.modal-body
+    p
+      label Invoice No.
+      input#editInvoiceNo(type="text")
+      input#editProjectId(type="hidden")
+      input#editInvoiceId(type="hidden")
+    p
+      label Created on
+      input#editTimeSince(type="text")
+    p 
+      label Client name
+      input#editClientName(type="text")
+    p
+      label Address
+      input#editClientAddress(type="text")
+    p
+      label Due date
+      input#editTimeUntill(type="text")
+    p
+      label Comment
+      textarea#editComment
+    p
+      label Payed
+      select#editPayed
+        option(value="0") No
+        option(value="1") Yes
+    p
+      label Items
+      button#addItemEdit.btn.btn-primary Add new item
+      table#itemsTbl.table.table-hover.table-bordered
+        thead
+          th No.
+          th Description
+          th Unit
+          th Unit cost
+          th Qty
+          th Tax
+          th Total
+          th Actions
+        tbody
+        tfoot
+          tr
+            td(colspan="8", style="text-align: right")
+              label Subtotal:  
+                a#invoiceSubTotal
+                |  EUR
+              label Total: 
+                a#invoiceTotal
+                |  EUR
+  div.modal-footer
+    button.btn(data-dismiss="modal", aria-hidden="true") Close
+    button#updateInvoice.btn.btn-primary Save changes
